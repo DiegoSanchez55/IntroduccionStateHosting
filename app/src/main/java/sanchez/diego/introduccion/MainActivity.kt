@@ -28,7 +28,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import sanchez.diego.introduccion.composables.ContadorCafes
+import sanchez.diego.introduccion.composables.FichaAlumno
 import sanchez.diego.introduccion.composables.FichaEstudiante
+import sanchez.diego.introduccion.composables.ListaCompras
+import sanchez.diego.introduccion.composables.PantallaPerfil
 import sanchez.diego.introduccion.ui.theme.IntroduccionTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,7 +40,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             IntroduccionTheme {
-                FichaEstudiante()
+                FichaAlumno()
             }
         }
     }
@@ -53,39 +56,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
-
-
-@Composable
-fun PantallaPerfil(){
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(
-            modifier = Modifier.weight(1f).fillMaxWidth(),
-            contentAlignment = Alignment.Center
-        ){
-            Image(
-                painter = painterResource(id = R.drawable.profile),
-                contentDescription = "Foto de perfil",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.size(250.dp).clip(CircleShape)
-            )
-        }
-
-        Box(
-            modifier = Modifier.weight(1f).fillMaxWidth(),
-            contentAlignment = Alignment.Center
-        ){
-            Text(
-                text = "Diego Sánchez",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center
-            )
-        }
-    }
 }
 
 
